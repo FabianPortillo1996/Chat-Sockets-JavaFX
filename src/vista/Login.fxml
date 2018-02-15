@@ -8,8 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="462.0" prefWidth="498.0" style="-fx-background-color: white; -fx-opacity: 0.9;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controlador.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="462.0" prefWidth="498.0" style="-fx-background-color: white; -fx-opacity: 0.9;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FXMLDocumentController">
    <children>
       <Button layoutX="210.0" layoutY="298.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #20818c; -fx-opacity: 1;" text="Ingresar" textFill="WHITE">
          <font>
@@ -33,5 +32,10 @@
             <Font name="Cambria" size="36.0" />
          </font>
       </Label>
+      <Button layoutX="445.0" layoutY="14.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="39.0" style="-fx-background-color: #20818c; -fx-opacity: 1;" text="X" textFill="WHITE">
+         <font>
+            <Font name="Cambria" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
