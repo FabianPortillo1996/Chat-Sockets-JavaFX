@@ -8,34 +8,53 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="462.0" prefWidth="498.0" style="-fx-background-color: white; -fx-opacity: 0.9;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FXMLDocumentController">
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="482.0" prefWidth="533.0" style="-fx-background-color: white; -fx-opacity: 0.9;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.LoginControlador">
    <children>
-      <Button layoutX="210.0" layoutY="298.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #20818c; -fx-opacity: 1;" text="Ingresar" textFill="WHITE">
+      <Button layoutX="228.0" layoutY="309.0" mnemonicParsing="false" onMouseClicked="#ingresar" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #20818c; -fx-opacity: 1;" text="Ingresar" textFill="WHITE">
          <font>
             <Font name="Cambria" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Button layoutX="193.0" layoutY="351.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: #20818c; -fx-opacity: 1;" text="Registrarse" textFill="WHITE">
+      <Button layoutX="211.0" layoutY="362.0" mnemonicParsing="false" onMouseClicked="#abrirVentanaRegistro" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: #20818c; -fx-opacity: 1;" text="Registrarse" textFill="WHITE">
          <font>
             <Font name="Cambria" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <TextField layoutX="162.0" layoutY="112.0" prefHeight="25.0" prefWidth="175.0" style="-fx-background-color: #20818c; -fx-opacity: 0.5;" />
-      <TextField layoutX="161.0" layoutY="209.0" prefHeight="25.0" prefWidth="175.0" style="-fx-background-color: #20818c; -fx-opacity: 0.5;" />
-      <Label layoutX="161.0" layoutY="55.0" text="Usuario">
+      <TextField fx:id="field_usuario" layoutX="180.0" layoutY="123.0" prefHeight="25.0" prefWidth="175.0" style="-fx-background-color: #20818c; -fx-opacity: 0.5;">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font></TextField>
+      <Label layoutX="179.0" layoutY="66.0" text="Usuario">
          <font>
             <Font name="Cambria" size="36.0" />
          </font>
       </Label>
-      <Label layoutX="161.0" layoutY="152.0" text="Contraseña">
+      <Label layoutX="179.0" layoutY="163.0" text="Contraseña">
          <font>
             <Font name="Cambria" size="36.0" />
          </font>
       </Label>
-      <Button layoutX="445.0" layoutY="14.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="39.0" style="-fx-background-color: #20818c; -fx-opacity: 1;" text="X" textFill="WHITE">
+      <Button fx:id="btn_cerrar" layoutX="480.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#cerrarVentana" prefHeight="28.0" prefWidth="39.0" style="-fx-background-color: #20818c; -fx-opacity: 1;" text="X" textFill="WHITE">
          <font>
             <Font name="Cambria" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
+      <PasswordField fx:id="field_password" layoutX="179.0" layoutY="222.0" prefHeight="25.0" prefWidth="175.0" style="-fx-background-color: #20818c; -fx-opacity: 0.5;">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </PasswordField>
    </children>
 </AnchorPane>
