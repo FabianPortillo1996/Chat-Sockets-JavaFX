@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FXMLDocumentController">
-    <children>
-      
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="582.0" prefWidth="363.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controlador.FXMLDocumentController">
+   <children>
+      <Pane prefHeight="75.0" prefWidth="365.0" style="-fx-background-color: #20818c;">
+         <children>
+            <Label layoutX="141.0" layoutY="16.0" text="CHAT" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="34.0" />
+               </font>
+            </Label>
+            <Button layoutX="316.0" layoutY="14.0" mnemonicParsing="false" opacity="0.47" prefHeight="25.0" prefWidth="35.0" text="X" />
+         </children>
+      </Pane>
+      <Pane layoutY="453.0" prefHeight="129.0" prefWidth="365.0" style="-fx-background-color: #20818c;">
+         <children>
+            <Button layoutX="295.0" layoutY="52.0" mnemonicParsing="false" opacity="0.49" text="Enviar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TextArea fx:id="area_mensaje" layoutX="57.0" layoutY="32.0" opacity="0.39" prefHeight="57.0" prefWidth="214.0" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="Cambria" size="16.0" />
+               </font>
+            </TextArea>
+         </children>
+      </Pane>
+      <ScrollPane layoutY="75.0" prefHeight="379.0" prefWidth="365.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="377.0" prefWidth="362.0" />
+        </content>
+      </ScrollPane>
+   </children>
 </AnchorPane>
