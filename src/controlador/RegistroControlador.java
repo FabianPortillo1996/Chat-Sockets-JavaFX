@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,7 +15,6 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import modelo.DAOUsuario;
 import modelo.Usuario;
@@ -84,15 +82,15 @@ public class RegistroControlador implements Initializable {
      */
     private void hacerFadeOut() {
         FadeTransition fade = new FadeTransition();
-        fade.setDuration(Duration.millis(900));
+        fade.setDuration(Duration.millis(500));
         fade.setNode(root);
         fade.setFromValue(1);
         fade.setToValue(0);
         fade.setOnFinished((ActionEvent event) -> {
             try {
                 Stage stage = (Stage) root.getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("/vista/Login.fxml"));
-                Scene scene = new Scene(root);
+                Parent parent = FXMLLoader.load(getClass().getResource("/vista/Login.fxml"));
+                Scene scene = new Scene(parent);
                 stage.setScene(scene);
             } catch (Exception e) {
             }
@@ -131,7 +129,7 @@ public class RegistroControlador implements Initializable {
      */
     private void hacerFadein() {
         FadeTransition fade = new FadeTransition();
-        fade.setDuration(Duration.millis(800));
+        fade.setDuration(Duration.millis(500));
         fade.setNode(root);
         fade.setFromValue(0);
         fade.setToValue(1);

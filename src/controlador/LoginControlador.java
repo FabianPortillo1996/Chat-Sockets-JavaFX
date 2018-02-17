@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -33,7 +34,7 @@ public class LoginControlador implements Initializable {
     private AnchorPane root;
     @FXML
     private TextField field_usuario;
-    @FXML 
+    @FXML
     private PasswordField field_password;
 
     /**
@@ -96,11 +97,11 @@ public class LoginControlador implements Initializable {
 
     @FXML
     private void ingresar(MouseEvent e) {
-
         String username = field_usuario.getText();
         String password = field_password.getText();
         if (e.getButton() == MouseButton.PRIMARY) {
             if (verificarField(username, password)) {
+
                 DAOUsuario dao_usuario = new DAOUsuario();
                 Usuario user = new Usuario();
 
@@ -110,6 +111,7 @@ public class LoginControlador implements Initializable {
                 dao_usuario.seleccionar(user);
 
                 if (user.getNombres() != null && user.getApellidos() != null) {
+                    FXMLDocumentController.usuario = user.getUsername();
                     abrirVentanaChat();
                 }
             }
@@ -123,16 +125,19 @@ public class LoginControlador implements Initializable {
             Scene scene = new Scene(parent);
             stage.setScene(scene);
         } catch (IOException ex) {
-           
+
         }
     }
 
     private boolean verificarField(String username, String password) {
-        if (!username.isEmpty() && !password.isEmpty()) {
-            return true;
+        if (username.isEmpty()) {
+            field_usuario.setStyle(field_usuario.getStyle() + "-fx-border-color : red; -fx-border-width : 3px;");
+            if (password.isEmpty()) {
+                field_password.setStyle(field_password.getStyle() + "-fx-border-color : red; -fx-border-width : 3px;");
+            }
+            return false;
         }
-
-        return false;
+        return true;
     }
 
     @Override

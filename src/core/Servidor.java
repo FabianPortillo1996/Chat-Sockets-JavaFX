@@ -23,7 +23,7 @@ public class Servidor implements Runnable {
                 Socket misocket = server_socket.accept();
                 DataInputStream flujo_entrada = new DataInputStream(misocket.getInputStream());
                 String mensaje_texto = flujo_entrada.readUTF();
-                System.out.println("/n" + mensaje_texto);
+                
                 misocket.close();
             }
         } catch (IOException ex) {
